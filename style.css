@@ -88,8 +88,29 @@ select {
 /* Code: */
 
 main {
-    background-color: white;
+    background-color: #08070B;
     min-height: 100vh;
+}
+
+.right-section-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.copied-text {
+    text-transform: uppercase;
+    font-size: calc(18rem/16);
+    color: #A4FFAF;
+}
+
+#copy-icon:hover {
+    fill: #FFFFFF;
+    cursor: pointer;
+}
+
+.hidden-text {
+    display: none;
 }
 
 .main-container {
@@ -97,7 +118,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: calc(64rem/16);
+    
     padding: 2rem;
 }
 
@@ -105,6 +126,7 @@ main {
     font-size: 1rem;
     color: #817D92;
     margin-bottom: 1rem;
+    margin-top: calc(64rem/16);
 }
 
 .internal-container {
@@ -124,15 +146,73 @@ main {
     fill: #A4FFAF;
 }
 
+.character-length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header {
+    color: #E6E5EA;
+}
+
+.character-length-text {
+    font-size: calc(24rem/16);
+    color: #A4FFAF;
+}
+
 .checkbox {
     display: inline-block;
+}
+
+/* Range Input Styling */
+
+#character-length {
+    width: 100%;
+    -webkit-appearance: none;
+    height: calc(8rem/16);
+    background: #18171F;
+    background-image: linear-gradient(#A4FFAF, #A4FFAF);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Safari, Chrome, Edge */
+
+#character-length::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Clear Browser Thumb */
+    width: calc(25rem/16);
+    height: calc(25rem/16);
+    background-color: #E6E5EA;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* FireFox */
+
+#character-length::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: calc(25rem/16);
+    height: calc(25rem/16);
+    background-color: #E6E5EA;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.password-properties-container {
+    margin-top: calc(32rem/16);
+    margin-bottom: calc(32rem/16);
+}
+
+.checkbox-element {
+    margin-bottom: calc(18rem/16);
 }
 
 .checkbox-icon {
     border: 2px solid white;
     display: inline-flex;
     box-sizing: border-box;
-    padding: calc(3rem/16);
+    padding: calc(2.5rem/16);
 }
 
 .checkbox-icon svg {
@@ -141,6 +221,7 @@ main {
 
 .checkbox-input:checked + .checkbox div:first-child {
     background-color: #A4FFAF;
+    border-color: transparent;
 }
 
 .checkbox-input:checked + .checkbox svg {
@@ -155,12 +236,63 @@ main {
 
 .checkbox-label {
     color: #E6E5EA;
+    margin-left: 0.5rem;
+}
+
+.checkbox-icon:hover {
+    cursor: pointer;
 }
 
 .generated-password {
     color: #E6E5EA;
     font-size: calc(24rem/16);
     font-weight: 500;
+}
+
+.password-strength-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #18171F;
+    padding: calc(15rem/16);
+}
+
+.password-strength-heading {
+    color: #817D92;
+}
+
+.password-strength-actual {
+    color: #E6E5EA;
+    font-size: calc(20rem/16);
+}
+
+.progress-indicator {
+    margin-left: 0.8rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.generate-button {
+    all: unset;
+    background-color: #A4FFAF;
+    width: 100%;
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+    padding: calc(21rem/16) 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.generate-button:focus, .generate-button:hover {
+    cursor: pointer;
+}
+
+
+
+.determined-strength {
+    display: flex;
+    align-items: center;
 }
 
 .password-strength {
@@ -231,4 +363,22 @@ main {
 .password-strong .password-strength:nth-child(4) {
     border: none;
     background-color: #A4FFAF;
+}
+
+@media (min-width: calc(768rem/16)) {
+    .generate-button:hover {
+        background-color: transparent;
+        border: 2px solid #A4FFAF;
+        fill: #A4FFAF;
+        color: #A4FFAF;
+    }
+
+    .main-container {
+        max-width: calc(540rem/16);
+        margin: 0 auto;
+    }
+
+    .main-heading {
+        margin-top: calc(133rem/16);
+    }
 }
