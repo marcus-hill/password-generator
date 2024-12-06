@@ -241,6 +241,7 @@ main {
 
 .checkbox-icon:hover {
     cursor: pointer;
+    border: 2px solid #A4FFAF;
 }
 
 .generated-password {
