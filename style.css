@@ -165,6 +165,10 @@ main {
     display: inline-block;
 }
 
+.faded-password {
+    opacity: 0.25;
+}
+
 /* Range Input Styling */
 
 #character-length {
@@ -173,7 +177,7 @@ main {
     height: calc(8rem/16);
     background: #18171F;
     background-image: linear-gradient(#A4FFAF, #A4FFAF);
-    background-size: 50% 100%;
+    background-size: 0% 100%;
     background-repeat: no-repeat;
 }
 

@@ -1,8 +1,6 @@
 const characterLengthRange = document.getElementById("character-length")
 const characterLengthDisplay = document.getElementById("character-length-text")
 
-characterLengthRange.style.backgroundSize = ((characterLengthRange.value - characterLengthRange.min) / (characterLengthRange.max - characterLengthRange.min)) * 100 + "% 100%";
-
 characterLengthRange.addEventListener("input", function(data) {
     characterLengthDisplay.innerHTML = characterLengthRange.value
 
@@ -76,6 +74,8 @@ generateButton.addEventListener("click", function(data) {
 
    if (password.length > 0) {
     passwordStrengthIndicatorText.classList.remove("hidden-text");
+
+    generatedPasswordField.classList.remove("faded-password");
  
     if (passwordScore > 300) {
      passwordStrengthIndicatorText.innerHTML = "STRONG"
@@ -90,6 +90,9 @@ generateButton.addEventListener("click", function(data) {
      passwordStrengthIndicatorText.innerHTML = "TOO WEAK!"
      passwordStrengthProgressIndicator.classList.add("password-too-weak")
     }
+   } else {
+    generatedPasswordField.classList.add("faded-password");
+    generatedPasswordField.innerText = "P4$5W0rD!";
    };
 
    
